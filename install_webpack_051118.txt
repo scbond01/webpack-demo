@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Webpack to-do's
 
 https://webpack.js.org/concepts/
@@ -116,3 +117,123 @@ webpack-dev-server is just there to reload and refresh your browser when code ch
 https://medium.com/webpack/unambiguous-webpack-config-with-typescript-8519def2cac7
 
 
+=======
+Webpack to-do's
+
+https://webpack.js.org/concepts/
+1) install webpack and webpack-cli (done)
+	npm install -g webpack
+	npm install -g webpack-cli
+
+2) webpack -v 
+	4.8.2
+
+3) webpack <cr> does a recompile
+	or npx webpack --config webpack.config.js
+	or npm start
+
+4) npm run build
+In order to generate a ./dist bundle you have to run "npm run build".
+This will invoke your webpack.config.ts file and put everything including file copies from
+CopyWebpackPlugin into the dist bundle.
+
+5) set intelliJ for ECMAScript 6
+    File->Settings->Languages&Frameworks->JavaScript->JavaScript language version->ECMAScript 6
+
+6) make hello world work (done)
+
+7) Understand what is webpack-dev-server --hot
+webpack-dev-server is just there to reload and refresh your browser when code changes
+
+8) Understand webpack-cli
+
+9) Understand how to set recompile and redisplay (webpack --watch)
+    The only downside is that you have to refresh your browser in order to see the changes.
+    and (npm install --save-dev webpack-dev-server)
+    now works without browser refresh
+
+    C:\webpack-demo>webpack --watch
+
+    Webpack is watching the files�
+
+    Hash: faa78b3c8852c01f2a92
+    Version: webpack 4.8.1
+    Time: 271ms
+    Built at: 2018-05-11 09:41:49
+        Asset    Size  Chunks             Chunk Names
+    bundle.js  70 KiB       0  [emitted]  main
+    Entrypoint main = bundle.js
+    [1] (webpack)/buildin/module.js 519 bytes {0} [built]
+    [2] (webpack)/buildin/global.js 509 bytes {0} [built]
+    [3] ./src/index.js 314 bytes {0} [built]
+        + 1 hidden module
+
+    WARNING in configuration
+    The 'mode' option has not been set, webpack will fallback to 'production' for this value.
+    Set 'mode' option to 'development' or 'production' to enable defaults for each environment.
+    You can also set it to 'none' to disable any default behavior. Learn more:
+    https://webpack.js.org/concepts/mode/
+
+10) IntelliJ - use search in the preferences to find "safe write" and disable it.
+    File -> Settings -> Appearance and Behavior -> System Settings -> Synchronization -> Uncheck
+    "Use safe write (save changes to a temporary file first)"
+
+11) Make webpack compile and run typescript/RxJS/Observables
+    npm install --save-dev typescript ts-loader
+    //this is critical to making webpack work with typescript!! It's the ts-node that counts.
+    npm install --save-dev ts-node @types/node @types/webpack
+
+    In index.ts:
+    npm install @types/lodash
+    import * as _ from "lodash";
+
+    https://webpack.js.org/guides/typescript/#basic-setup
+    https://webpack.js.org/configuration/configuration-languages/#typescript
+    https://stackoverflow.com/questions/40075269/is-it-possible-to-write-webpack-config-in-typescript
+
+12) put in package.json
+    "scripts": {
+      "build": "webpack --config webpack.config.js"
+    }
+
+13) Be able to load CSS files
+    npm install --save-dev style-loader css-loader
+    and change the webpack.config.ts file
+
+14) be able to load arbitrary files from ./dist
+    npm install --save-dev copy-webpack-plugin
+    then make changes to webpack.config.ts
+
+    plugins: [
+        ... ,
+        new CopyWebpackPlugin([
+            { from: './data/*', to: './' }
+        ]),
+        ...
+    ],
+
+    and
+    write-file-webpack-plugin for use with webpack-dev-server is another way to copy files
+
+15) install ES6 promise
+    npm i --save-dev  @types/es6-promise
+
+
+16) 404s will fallback to index.html
+    devServer: {
+        historyApiFallback: {
+            index: 'index.html'
+        }
+    },
+
+17) webpack-merge (TBD)
+
+18) browser-sync-webpack-plugin (not needed with webpack-dev-server)
+
+19) understand how to generate a bundle.js while using webpack-dev-server
+(see #4 "npm run build")
+
+https://medium.com/webpack/unambiguous-webpack-config-with-typescript-8519def2cac7
+
+
+>>>>>>> 	new file:   data/my_data.json

@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 {
   "name" : "Steve Bond",
   "age" : 58
+=======
+{
+  "name" : "Steve Bond",
+  "age" : 58
+>>>>>>> 	new file:   data/my_data.json
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "compilerOptions": {
     "outDir": "./dist/",
@@ -8,4 +9,16 @@
     "jsx": "react",
     "allowJs": true
   }
+=======
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "target": "es6",
+    "jsx": "react",
+    "allowJs": true
+  }
+>>>>>>> 	new file:   data/my_data.json
 }
