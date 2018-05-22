@@ -16,7 +16,7 @@ function component() {
     element.classList.add('hello');
 
     let person = new Person();
-    console.log("Hello: " + person.name);
+    console.log("Hello there: " + person.name);
 
     let obs = new MyObservable();
     obs.myPromise();
